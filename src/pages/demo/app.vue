@@ -28,32 +28,32 @@ export default {
 
 <style lang="postcss">
 body,html,#app{
-  height: 100%
+  height: 100%;
 }
 /* .slide-transition {
-  transition-duration: .3s
-  width: 100%
+  transition-duration: .3s;
+  width: 100%;
 }
 
 .slide-enter, .slide-leave {
-  transform: translate3d(100%, 0, 0)
-  overflow: hidden
+  transform: translate3d(100%, 0, 0);
+  overflow: hidden;
 } */
 .child-view {
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  transition: all .3s cubic-bezier(.55,0,.1,1)
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all .3s cubic-bezier(.55,0,.1,1);
 }
 .slide-left-enter, .slide-right-leave-active {
-  opacity: 0
-  transform: translate(100%, 0)
-  transform: translate3d(100%, 0, 0)
+  opacity: 0;
+  transform: translate(100%, 0);
+  transform: translate3d(100%, 0, 0);
 }
 .slide-left-leave-active, .slide-right-enter {
-  opacity: 0
-  transform: translate3d(-100%, 0, 0)
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
 }
 </style>

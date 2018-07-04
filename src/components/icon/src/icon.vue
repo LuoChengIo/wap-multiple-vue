@@ -25,8 +25,8 @@ export default {
 </script>
 
 <style lang="postcss">
-@import "../../../fonts/style.css"
+@import "../../../fonts/style.css";
 .icon{
-  position: relative
+  position: relative;
 }
 </style>

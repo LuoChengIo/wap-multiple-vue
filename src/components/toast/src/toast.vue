@@ -63,35 +63,35 @@
 </script>
 <style lang="postcss" scoped>
   .dc-toast{
-    position: fixed
-    left: 50%
-    top: 50%
-    max-width: 80%
-    padding:1em 2em
-    font-size: 28px
-    border-radius:.1em
-    background: rgba(0, 0, 0, 1)
-    color: #fff
-    text-align: center
-    z-index: 9999
-    transform: translate(-50%, -50%)
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    max-width: 80%;
+    padding:1em 2em;
+    font-size: 28px;
+    border-radius:.1em;
+    background: rgba(0, 0, 0, 1);
+    color: #fff;
+    text-align: center;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
   }
   .dc-toast-text{
-    display: block
-    text-align: center
+    display: block;
+    text-align: center;
   }
   
 /* 可以设置不同的进入和离开动画 */
 /* 设置持续时间和动画函数 */
 .toast-fade-enter-active {
-  transition: all .3s ease
+  transition: all .3s ease;
 }
 .toast-fade-leave-active {
-  transition: all .1s ease
+  transition: all .1s ease;
 }
 .toast-fade-enter, .toast-fade-leave-to
 /* .toast-fade-leave-active for below version 2.1.8 */ {
-  transform: translate(-50%,10px)
-  opacity: 0
+  transform: translate(-50%,10px);
+  opacity: 0;
 }
 </style>

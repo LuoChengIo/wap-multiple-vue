@@ -52,23 +52,23 @@ export default {
 
 <style lang="postcss">
   .dc-button{
-    position: relative
-    display: inline-block
-    margin: 0
-    padding:.3em .8em
-    border-radius:.2em
-    text-decoration: none
-    text-align: center
-    background:#58a linear-gradient(#77a0bb,#58a)
-    color: #fff
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding:.3em .8em;
+    border-radius:.2em;
+    text-decoration: none;
+    text-align: center;
+    background:#58a linear-gradient(#77a0bb,#58a);
+    color: #fff;
   }
   .icon{
   }
 
   .dc-button-text{
-    line-height: 1
+    line-height: 1;
   }
   .dc-button-block{
-    display: block
+    display: block;
   }
 </style>

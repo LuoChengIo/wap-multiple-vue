@@ -38,13 +38,13 @@ export default {
 
 <style lang="postcss">
   .parent{
-    width: 100%
-    height: 200px
-    background-color: gray
+    width: 100%;
+    height: 200px;
+    background-color: gray;
   }
   .children{
-    width: 100px
-    height: 100px
-    background-color: bisque
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
   }
 </style>
