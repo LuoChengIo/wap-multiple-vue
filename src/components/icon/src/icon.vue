@@ -16,17 +16,17 @@ export default {
   },
   computed: {
     classNames() {
-      const obj = {};
-      obj['icon-' + this.value] = true;
-      return obj;
+      const obj = {}
+      obj['icon-' + this.value] = true
+      return obj
     }
   }
-};
+}
 </script>
 
 <style lang="postcss">
-@import "../../../fonts/style.css";
+@import "../../../fonts/style.css"
 .icon{
-  position: relative;
+  position: relative
 }
 </style>

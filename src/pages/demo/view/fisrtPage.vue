@@ -12,9 +12,9 @@ export default {
   data() {
     return {
       sdfs: 'sdasd'
-    };
+    }
   }
-};
+}
 
 </script>
 <style lang='postcss' scoped>

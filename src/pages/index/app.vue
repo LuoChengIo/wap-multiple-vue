@@ -22,7 +22,7 @@ export default {
   data() {
     return {
 
-    };
+    }
   },
   methods: {
     startHacking() {
@@ -30,21 +30,21 @@ export default {
         title: 'It Works',
         message: 'We have laid the groundwork for you. Now it\'s your time to build something epic!',
         duration: 6000
-      });
+      })
     }
   }
-};
+}
 </script>
 
 <style lang="postcss">
   .parent{
-    width: 100%;
-    height: 200px;
-    background-color: gray;
+    width: 100%
+    height: 200px
+    background-color: gray
   }
   .children{
-    width: 100px;
-    height: 100px;
-    background-color: bisque;
+    width: 100px
+    height: 100px
+    background-color: bisque
   }
 </style>

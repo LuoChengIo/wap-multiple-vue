@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import icon from '@/components/icon';
+import icon from '@/components/icon'
 export default {
   props: {
     icon: {
@@ -36,39 +36,39 @@ export default {
     buttonClass() {
       const style = {
         'dc-button-block': this.block
-      };
-      if (this.color) style['color-' + this.color] = true;
-      return style;
+      }
+      if (this.color) style['color-' + this.color] = true
+      return style
     },
     buttonFSize() {
-      return this.size / 750 * 100;
+      return this.size / 750 * 100
     }
   },
   components: {
     icon
   }
-};
+}
 </script>
 
 <style lang="postcss">
   .dc-button{
-    position: relative;
-    display: inline-block;
-    margin: 0;
-    padding:.3em .8em;
-    border-radius:.2em;
-    text-decoration: none;
-    text-align: center;
-    background:#58a linear-gradient(#77a0bb,#58a);
-    color: #fff;
+    position: relative
+    display: inline-block
+    margin: 0
+    padding:.3em .8em
+    border-radius:.2em
+    text-decoration: none
+    text-align: center
+    background:#58a linear-gradient(#77a0bb,#58a)
+    color: #fff
   }
   .icon{
   }
 
   .dc-button-text{
-    line-height: 1;
+    line-height: 1
   }
   .dc-button-block{
-    display: block;
+    display: block
   }
 </style>

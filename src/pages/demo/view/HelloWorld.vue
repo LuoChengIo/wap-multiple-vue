@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import icon from '@/components/icon';
-import DcButton from '@/components/dc-button';
+import icon from '@/components/icon'
+import DcButton from '@/components/dc-button'
 export default {
   name: 'HelloWorld',
   components: {
@@ -19,29 +19,29 @@ export default {
   data() {
     return {
       msg: 'Welcome to Your Vue.js App'
-    };
+    }
   },
   methods: {
     goOtherPage() {
-      this.$router.push({ path: '/fisrtPage' });
+      this.$router.push({ path: '/fisrtPage' })
     },
     showToast() {
       this.$toast({
         duration: 1500,
         message: '你好啊'
-      });
+      })
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello{
-  background-color: red;
+  background-color: red
 }
 h1, h2 {
-  font-weight: normal;
+  font-weight: normal
 }
 ul {
   list-style-type: none;
@@ -52,6 +52,6 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #42b983
 }
 </style>
