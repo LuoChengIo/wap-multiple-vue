@@ -1,0 +1,41 @@
+@import "./color.css";
+:root{
+--fontFamily: Roboto, Lato, sans-serif;
+
+
+--primaryColor: var(--blue);
+--secondaryColor: var(--pinkA200);
+--successColor: var(--green);
+--warningColor: var(--yellow600;);
+--errorColor: var(--red);
+--infoColor: var(--blue);
+--trackColor: var(--grey400);
+
+
+--textColor: var(--darkBlack);
+--secondaryTextColor: color(var(--fullBlack) a(54%));
+--alternateTextColor: var(--white);
+--borderColor: color(var(--fullBlack) a(12%));
+--disabledColor: color(var(--fullBlack) a(38%));
+
+--backgroundColor: var(--grey50);
+--dialogBackgroundColor: var(--white);
+--chipBackgroundColor: var(--grey300);
+--activeIconColor: color(var(--fullBlack) a(54%));
+--inActiveIconColor: color(var(--fullBlack) a(38%));
+
+--iconSize: 24px;
+--desktopGutter: 24px;
+--desktopGutterMore: 32px;
+--desktopGutterLess: 16px;
+--desktopGutterMini: 8px;
+--desktopKeylineIncrement: 64px;
+--desktopDropDownMenuItemHeight: 32px;
+--desktopDropDownMenuFontSize: 15px;
+--desktopDrawerMenuItemHeight: 48px;
+--desktopSubheaderHeight: 48px;
+--desktopToolbarHeight: 56px;
+
+--easeOutFunction: cubic-bezier(0.23, 1, 0.32, 1);
+--easeInOutFunction: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}

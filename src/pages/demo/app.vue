@@ -27,6 +27,7 @@ export default {
 </script>
 
 <style lang="postcss">
+@import '@/styles/variables.css';
 body,html,#app{
   height: 100%;
 }
@@ -46,6 +47,7 @@ body,html,#app{
   right: 0;
   bottom: 0;
   transition: all .3s cubic-bezier(.55,0,.1,1);
+  background-color: var(--secondaryColor);
 }
 .slide-left-enter, .slide-right-leave-active {
   opacity: 0;

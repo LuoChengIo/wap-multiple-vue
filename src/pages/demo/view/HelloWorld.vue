@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     goOtherPage() {
-      this.$router.push({ path: '/fisrtPage' })
+      this.$router.push({ path: '/fisrtPage/wdsd' })
     },
     showToast() {
       this.$toast({
@@ -38,7 +38,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello{
-  background-color: red;
 }
 h1, h2 {
   font-weight: normal;

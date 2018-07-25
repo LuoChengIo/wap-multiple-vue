@@ -11,7 +11,7 @@ export default new Router({
       component: () => import('../view/HelloWorld')
     },
     {
-      path: '/fisrtPage',
+      path: '/fisrtPage/wdsd',
       name: 'fisrtPage',
       component: () => import('../view/fisrtPage')
     }

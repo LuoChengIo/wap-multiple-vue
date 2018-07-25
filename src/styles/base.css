@@ -12,7 +12,7 @@ html{
 }
 body{
     line-height: 1.5; 
-    color: #333333; 
+    color: var(--textColor); 
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -78,15 +78,28 @@ ins, a {
 /* margin */
 .m0 { margin: 0 !important; }
 /* 文本颜色 */
-/* .text-primary{ color: $primary}
-.text-secondary{ color: $secondary}
-.text-success{ color: $success;}
-.text-danger{ color: $danger;}
-.text-warning{ color: $warning}
-.text-info{ color: $info}
-.text-light{ color: $light}
-.text-dark{ color: $dark}
-.text-white{ color: $white;} */
+.primary{
+    color:var(--primaryColor);
+}
+.secondary{
+    color:var(--secondaryColor);
+}
+.success{
+    color:var(--successColor);
+}
+.warning{
+    color:var(--warningColor);
+}
+.error{
+    color:var(--errorColor);
+}
+.info{
+    color:var(--infoColor);
+}
+.track{
+    color:var(--trackColor);
+} 
+
 /* font-size */
 .f0 { font-size: 0; }
 /* font-style */
@@ -211,7 +224,7 @@ img {
         flex-direction: $(item);
     }
 }
-
+ 
 /**
  *
  * 容器属性flex-wrap nowrap(默认)|wrap|wrap-reverse
