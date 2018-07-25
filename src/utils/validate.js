@@ -11,7 +11,7 @@ export function validateLowerCase(str) {
   return reg.test(str)
 }
 
-/* 大写字母*/
+/* 大写字母sdsd*/
 export function validateUpperCase(str) {
   const reg = /^[A-Z]+$/
   return reg.test(str)
