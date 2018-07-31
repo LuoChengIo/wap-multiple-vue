@@ -47,7 +47,7 @@ body,html,#app{
   right: 0;
   bottom: 0;
   transition: all .3s cubic-bezier(.55,0,.1,1);
-  background-color: var(--secondaryColor);
+  /* background-color: var(--secondaryColor); */
 }
 .slide-left-enter, .slide-right-leave-active {
   opacity: 0;

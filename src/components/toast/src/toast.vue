@@ -1,13 +1,13 @@
 <template>
   <transition name="toast-fade">
-    <div class="dc-toast" v-show="visible">
-      <span class="dc-toast-text" v-html="message"></span>
+    <div class="vc-toast" v-show="visible">
+      <span class="vc-toast-text" v-html="message"></span>
     </div>
   </transition>
 </template>
 <script>
   export default {
-    name: 'DcToast',
+    name: 'VcToast',
     data() {
       return {
         visible: false,
@@ -62,7 +62,7 @@
   }
 </script>
 <style lang="postcss" scoped>
-  .dc-toast{
+  .vc-toast{
     position: fixed;
     left: 50%;
     top: 50%;
@@ -76,7 +76,7 @@
     z-index: 9999;
     transform: translate(-50%, -50%);
   }
-  .dc-toast-text{
+  .vc-toast-text{
     display: block;
     text-align: center;
   }
@@ -91,7 +91,7 @@
 }
 .toast-fade-enter, .toast-fade-leave-to
 /* .toast-fade-leave-active for below version 2.1.8 */ {
-  transform: translate(-50%,10px);
+  transform: translate(-50%,-30%);
   opacity: 0;
 }
 </style>

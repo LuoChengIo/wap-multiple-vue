@@ -1,20 +1,25 @@
 <template>
   <div class="hello">
     <h1 >{{ msg }}</h1>
-    <icon value="account_box"></icon>
-    <dc-button  @click.native="goOtherPage" text="去另外一个页面"></dc-button>
-    <dc-button icon="account_box" @click.native="showToast" :size="28" text="提示"></dc-button>
+    <icon class="vm" value="account_box"></icon>
+    <vc-button class="vm" @click.native="goOtherPage" text="去另外一个页面"></vc-button>
+    <br>
+    <vc-button class="vm" block icon="account_box" v-waves @click.native="showToast" :size="36" text="提示"></vc-button>
   </div>
 </template>
 
 <script>
 import icon from '@/components/icon'
-import DcButton from '@/components/dc-button'
+import VcButton from '@/components/button'
+import waves from '@/directives/waves'
 export default {
   name: 'HelloWorld',
+  directives: {
+    waves
+  },
   components: {
     icon,
-    DcButton
+    VcButton
   },
   data() {
     return {

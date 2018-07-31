@@ -1,8 +1,8 @@
-import DcToast from './src/toast'
+import VcToast from './src/toast'
 
 /* istanbul ignore next */
-DcToast.install = function(Vue) {
-  Vue.prototype.$toast = DcToast
+VcToast.install = function(Vue) {
+  Vue.prototype.$toast = VcToast
 }
 
-export default DcToast
+export default VcToast

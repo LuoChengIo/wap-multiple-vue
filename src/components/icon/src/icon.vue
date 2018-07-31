@@ -1,5 +1,5 @@
 <template>
-  <span class="icon" :class="classNames" :style="{'font-size': size + 'px'}"><slot></slot></span>
+  <span class="icon" :class="classNames" :style="{'font-size': iconFSize + 'vw'}"><slot></slot></span>
 </template>
 
 <script>
@@ -19,6 +19,9 @@ export default {
       const obj = {}
       obj['icon-' + this.value] = true
       return obj
+    },
+    iconFSize() {
+      return this.size / 750 * 100
     }
   }
 }

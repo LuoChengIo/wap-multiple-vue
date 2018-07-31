@@ -3,10 +3,10 @@ import App from './app.vue'
 import router from './router'
 import '@/styles/index.css'
 
-import DcToast from '@/components/toast'
+import VcToast from '@/components/toast'
 
 // 加载组件
-Vue.use(DcToast)
+Vue.use(VcToast)
 new Vue({
   el: '#app',
   router,
