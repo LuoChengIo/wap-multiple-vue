@@ -1,5 +1,5 @@
 <template>
-  <span class="icon" :class="classNames" :style="{'font-size': iconFSize + 'vw'}"><slot></slot></span>
+  <span class="icon" :class="classNames" :style="{'font-size': iconFSize}"><slot></slot></span>
 </template>
 
 <script>
@@ -20,8 +20,8 @@ export default {
       obj['icon-' + this.value] = true
       return obj
     },
-    iconFSize() {
-      return this.size / 750 * 100
+    iconFSize() { // 按钮字体px转化成vw
+      return (this.size + 8) / 750 * 100 + 'vw'
     }
   }
 }
@@ -31,5 +31,11 @@ export default {
 @import "../../../fonts/style.css";
 .icon{
   position: relative;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
 }
 </style>

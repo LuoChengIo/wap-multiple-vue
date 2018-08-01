@@ -36,6 +36,17 @@
 --desktopSubheaderHeight: 48px;
 --desktopToolbarHeight: 56px;
 
+--ios-transition-duration:              500ms !default;
+--ios-transition-timing-function:       cubic-bezier(.36, .66, .04, 1) !default;
+--android-transition-duration:          200ms !default;
+--android-transition-timing-function:   cubic-bezier(0.4, 0.6, 0.2, 1) !default;
 --easeOutFunction: cubic-bezier(0.23, 1, 0.32, 1);
 --easeInOutFunction: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+--button-base-color:#fff;
+--button-base-font-size: 36px;
+--button-base-font-family: pingfang SC;
+--button-linear-gradient-left-color:#5392ff;
+--button-linear-gradient-right-color:#165fe6;
+--button-box-shadow:0px 0px 10px color(#4084ff alpha(-10%));
 }

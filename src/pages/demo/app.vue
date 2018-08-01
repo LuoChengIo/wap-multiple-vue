@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <transition :name="transitionName">
+    <transition name="page">
       <router-view  class="child-view"></router-view>
     </transition>
   </div>
@@ -10,15 +10,29 @@
 export default {
   data() {
     return {
-      transitionName: 'slide-left'
+      gradeClass: 'ios'
     }
+  },
+  created() {
+    // 不同的类型适用不同的类型页面切换效果
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      this.gradeClass = 'ios'
+    } else {
+      this.gradeClass = 'android'
+    }
+    document.querySelector('body').className = this.gradeClass
   },
   // dynamically set transition based on route change
   watch: {
     '$route'(to, from) {
       const toDepth = to.path.split('/').length
       const fromDepth = from.path.split('/').length
-      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+      const root = document.getElementById('app')
+      if (toDepth < fromDepth) {
+        root.setAttribute('transition-direction', 'back')
+      } else {
+        root.setAttribute('transition-direction', 'forward')
+      }
     }
   },
   methods: {

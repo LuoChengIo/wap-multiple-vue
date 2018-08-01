@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+    <pre v-highlight>
+      <code class="javascript">// Static source code
+        function(test) { 
+          console.log(test)
+        }
+      </code>
+    </pre>
     <h1>Flex常规布局</h1>
     <h2>1. 单列布局</h2>
     <h3 class="info">1.1 - 水平居中</h3>

@@ -1,36 +1,49 @@
 <template>
-  <div class="vc-button" :class="buttonClass" :style="{'font-size':buttonFSize+'vw'}">
-    <slot>
-      <icon class="vm" v-if="icon" :size="size" :value="icon"></icon>
-      <span class="vc-button-text vm" v-if="text">{{text}}</span>
-    </slot>
-  </div>
+  <button
+    class="vc-button"
+    @click="handleClick"
+    :disabled="buttonDisabled || loading"
+    :autofocus="autofocus"
+    :type="nativeType"
+    :class="[
+      type ? 'vc-button--' + type : '',
+      {
+        'is-disabled': buttonDisabled || loading,
+        'is-loading': loading,
+        'is-block':block,
+        'is-round': round,
+      }
+    ]"
+    :style="{'font-size':buttonFSize}"
+  >
+    <icon class="vm vc-icon-loading" :size="size" v-if="loading" value="autorenew"></icon>
+    <icon class="vm" v-if="icon && !loading" :size="size" :value="icon"></icon>
+    <span class="vm" v-if="$slots.default"><slot></slot></span>
+  </button>
 </template>
 
 <script>
 import icon from '@/components/icon'
 export default {
   props: {
+    type: {
+      type: String,
+      default: 'default'
+    },
+    size: Number,
     icon: {
       type: String,
       default: ''
     },
-    text: {
+    nativeType: {
       type: String,
-      default: ''
+      default: 'button'
     },
-    size: {
-      type: Number,
-      default: 36
-    },
-    block: {
-      type: Boolean,
-      default: false
-    },
-    color: {
-      type: String,
-      default: ''
-    }
+    loading: Boolean,
+    disabled: Boolean,
+    autofocus: Boolean,
+    round: Boolean,
+    block: Boolean
   },
   computed: {
     buttonClass() {
@@ -40,41 +53,81 @@ export default {
       if (this.color) style['color-' + this.color] = true
       return style
     },
-    buttonFSize() {
-      return this.size / 750 * 100
+    buttonFSize() { // 按钮字体px转化成vw
+      return this.size / 750 * 100 + 'vw'
+    },
+    buttonDisabled() {
+      return this.disabled
     }
   },
   components: {
     icon
+  },
+  methods: {
+    handleClick(evt) {
+      this.$emit('click', evt)
+    }
   }
 }
 </script>
 
 <style lang="postcss">
+@import '@/styles/variables.css';
   .vc-button{
     position: relative;
     display: inline-block;
     margin: 0;
-    padding:.55em .8em;
+    padding:.55em .8em ;
     border-radius:.2em;
+    white-space: nowrap;
+    -webkit-appearance: none;
+    outline: none;
+    transition: .1s;
+    font-weight: 500;
+    -moz-user-svcect: none;
+    -webkit-user-svcect: none;
+    -ms-user-svcect: none;
+    border:none;
     text-decoration: none;
     text-align: center;
-    background:#6080F2 linear-gradient(#6080F2,#4555E9);
-    color: #fff;
+    background:var(--button-linear-gradient-left-color) linear-gradient(to right , var(--button-linear-gradient-left-color),var(--button-linear-gradient-right-color));
+    color: var(--button-base-color);
     cursor: pointer;
+    font-size: var(--button-base-font-size);
+    font-family: var(--button-base-font-family);
+    box-shadow:var(--button-box-shadow);
+    &.is-disabled {
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        /* background: color(var(--button-linear-gradient-left-color) alpha(50%)) linear-gradient(color(var(--button-linear-gradient-left-color) alpha(50%)),color(var(--button-linear-gradient-right-color) alpha(50%))); */
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: .7;
+      }
+    }
+    &.is-round{
+      border-radius: 4em;
+    }
+    &.is-block{
+      display: block;
+      width: 100%;
+    }  
   }
-  /* 交互与变色-加深效果
-  .vc-button:active,
-  .vc-button:hover {
-    background-image: -webkit-linear-gradient(to top, rgba(0, 0, 0, .05), rgba(0, 0, 0, .05));
+  /*交互与变色-加深效果*/
+  /* .vc-button:active{
     background-image: linear-gradient(to top, rgba(0, 0, 0, .05), rgba(0, 0, 0, .05));
   } */
-  .icon{
+  .vc-icon-loading{
+    animation: rotating 2s linear infinite;
   }
-  .vc-button-text{
-    line-height: 1;
-  }
-  .vc-button-block{
-    display: block;
+  @keyframes rotating {
+    from{
+      transform:rotate(0deg)
+    }
+    to{
+      transform:rotate(360deg)
+    }
   }
 </style>
