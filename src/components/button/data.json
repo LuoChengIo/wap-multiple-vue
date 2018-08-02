@@ -1,0 +1,11 @@
+{
+  "name":"按钮",
+  "data":[
+    {"title":"按钮","attr":"{}","html":"<vc-button>按钮</vc-button>"},
+    {"title":"圆角按钮","attr":"{\"round\":true}","html":"<vc-button round>圆角按钮</vc-button>"},
+    {"title":"块级按钮","attr":"{\"block\":true}","html":"<vc-button block>块级按钮</vc-button>"},
+    {"title":"图标按钮","attr":"{\"icon\":\"account_box\"}","html":"<vc-button icon='account_box'>图标按钮</vc-button>"},
+    {"title":"加载中","attr":"{\"loading\":true}","html":"<vc-button  :loading='true' >加载中</vc-button>"},
+    {"title":"更大号按钮","attr":"{\"size\":50}","html":"<vc-button  :size='50' >更大号按钮</vc-button>"}
+  ]
+}
