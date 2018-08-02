@@ -14,8 +14,7 @@
         'is-round': round,
       }
     ]"
-    :style="{'font-size':buttonFSize}"
-  >
+    :style="buttonStyles">
     <icon class="vm vc-icon-loading" :size="size" v-if="loading" value="autorenew"></icon>
     <icon class="vm" v-if="icon && !loading" :size="size" :value="icon"></icon>
     <span class="vm" v-if="$slots.default"><slot></slot></span>
@@ -23,6 +22,7 @@
 </template>
 
 <script>
+import { hexToRgba } from '@/utils'
 import icon from '@/components/icon'
 export default {
   props: {
@@ -32,6 +32,14 @@ export default {
     },
     size: Number,
     icon: {
+      type: String,
+      default: ''
+    },
+    bgcolor: {
+      type: String,
+      default: ''
+    },
+    color: {
       type: String,
       default: ''
     },
@@ -46,11 +54,12 @@ export default {
     block: Boolean
   },
   computed: {
-    buttonClass() {
-      const style = {
-        'vc-button-block': this.block
-      }
-      if (this.color) style['color-' + this.color] = true
+    buttonStyles() {
+      const style = {}
+      if (this.size) style['font-size'] = this.buttonFSize
+      if (this.color) style['color'] = this.color
+      if (this.bgcolor) style['background'] = this.bgcolor
+      if (this.bgcolor) style['box-shadow'] = `0px 0px 10px ${hexToRgba(this.bgcolor, 90).rgba}`
       return style
     },
     buttonFSize() { // 按钮字体px转化成vw

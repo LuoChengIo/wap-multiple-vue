@@ -73,6 +73,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 code{
+  padding: 1em 0;
   background-color: #fafafa;
 }
 .hello{
