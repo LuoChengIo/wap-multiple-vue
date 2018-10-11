@@ -1,24 +1,6 @@
 <template>
   <div class="hello">
-    <h1 >{{iconJson.name}}</h1>
-    <div class="item">
-      <div v-for="(els,index) in iconJson.data" :key="index"> 
-        <icon v-bind="els.attr" value="account_box"></icon>
-        <pre v-highlight >
-          <code class="html" v-text="els.html"></code>
-        </pre>
-      </div>
-      
-    </div>
-    <h1 >{{btnJson.name}}</h1>
-    <div class="item">
-      <div v-for="(els,index) in btnJson.data" :key="index">
-        <vc-button v-bind="els.attr" >{{els.title}}</vc-button>
-        <pre v-highlight>
-          <code class="html" v-text="els.html"></code>
-        </pre>
-      </div>
-    </div>
+      实打实的
   </div>
 </template>
 

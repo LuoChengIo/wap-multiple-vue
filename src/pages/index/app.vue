@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <pre v-highlight>
+    <pre >
       <code class="javascript">// Static source code
         function(test) { 
           console.log(test)

@@ -10,19 +10,21 @@
       {
         'is-disabled': buttonDisabled || loading,
         'is-loading': loading,
+        'is-plain': plain,
         'is-block':block,
         'is-round': round,
       }
     ]"
     :style="buttonStyles">
-    <icon class="vm vc-icon-loading" :size="size" v-if="loading" value="autorenew"></icon>
-    <icon class="vm" v-if="icon && !loading" :size="size" :value="icon"></icon>
-    <span class="vm" v-if="$slots.default"><slot></slot></span>
+    
+    <svg-icon className="vc-loading" v-if="loading" icon-class="spinner2"  />
+    <svg-icon  v-if="icon && !loading" :icon-class="icon"></svg-icon>
+    <span  v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
 
 <script>
-import { hexToRgba } from '@/utils'
+// import { hexToRgba } from '@/utils'
 import icon from '@/components/icon'
 export default {
   props: {
@@ -47,6 +49,7 @@ export default {
       type: String,
       default: 'button'
     },
+    plain: Boolean,
     loading: Boolean,
     disabled: Boolean,
     autofocus: Boolean,
@@ -59,7 +62,8 @@ export default {
       if (this.size) style['font-size'] = this.buttonFSize
       if (this.color) style['color'] = this.color
       if (this.bgcolor) style['background'] = this.bgcolor
-      if (this.bgcolor) style['box-shadow'] = `0px 0px 10px ${hexToRgba(this.bgcolor, 90).rgba}`
+      // if (this.bgcolor) style['box-shadow'] = `0px 0px 10px ${hexToRgba(this.bgcolor, 90).rgba}`
+      if (this.plain && this.color) style['border-color'] = this.color
       return style
     },
     buttonFSize() { // 按钮字体px转化成vw
@@ -86,7 +90,7 @@ export default {
     position: relative;
     display: inline-block;
     margin: 0;
-    padding:.55em .8em ;
+    padding:.69em .8em ;
     border-radius:.2em;
     white-space: nowrap;
     -webkit-appearance: none;
@@ -104,7 +108,7 @@ export default {
     cursor: pointer;
     font-size: var(--button-base-font-size);
     font-family: var(--button-base-font-family);
-    box-shadow:var(--button-box-shadow);
+    /* box-shadow:var(--button-box-shadow); */
     &.is-disabled {
       &,
       &:hover,
@@ -122,21 +126,16 @@ export default {
     &.is-block{
       display: block;
       width: 100%;
-    }  
+    }
+    &.is-plain{
+      background: transparent;
+      box-shadow: none;
+      color: var(--button-linear-gradient-left-color);
+      border:1px solid var(--button-linear-gradient-left-color);
+    }
   }
   /*交互与变色-加深效果*/
-  /* .vc-button:active{
+  .vc-button:active{
     background-image: linear-gradient(to top, rgba(0, 0, 0, .05), rgba(0, 0, 0, .05));
-  } */
-  .vc-icon-loading{
-    animation: rotating 2s linear infinite;
-  }
-  @keyframes rotating {
-    from{
-      transform:rotate(0deg)
-    }
-    to{
-      transform:rotate(360deg)
-    }
   }
 </style>

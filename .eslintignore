@@ -1,4 +1,5 @@
 /build/
 /config/
-/dist/
+/dist_sit/
+/dist_online/
 /*.js

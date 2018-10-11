@@ -12,6 +12,10 @@ html{
 }
 body{
     color: var(--textColor); 
+    background-color: var(--body-base-bgcolor);
+}
+#app.blur{
+    filter: blur(2px);
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -290,6 +294,71 @@ img {
     border: 1px solid transparent;
     border-image: svg(1px-border param(--color #00b1ff)) 2 2 stretch;
   } */
+  /* 1像素边框 */
+  .bt1{
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        background-color:var(--border-color);
+        display: block;
+        top:0;
+        left: 0;
+        right: auto;
+        height: 1px;
+        width: 100%;
+        transform-origin: 0 0;
+        transform: scaleY(.5);
+    }
+  }
+  .bd1{
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        background-color:var(--border-color);
+        display: block;
+        bottom:0;
+        left: 0;
+        right: auto;
+        height: 1px;
+        width: 100%;
+        transform-origin: 0 0;
+        transform: scaleY(.5);
+    }
+  }
+  .bl1{
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        background-color:var(--border-color);
+        display: block;
+        bottom:0;
+        left: 0;
+        right: auto;
+        height: 100%;
+        width: 1px;
+        transform-origin: 0 0;
+        transform: scaleX(.5);
+    }
+  }
+  .br1{
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        background-color:var(--border-color);
+        display: block;
+        bottom:0;
+        left: auto;
+        right: 0;
+        height: 100%;
+        width: 1px;
+        transform-origin: 0 0;
+        transform: scaleX(.5);
+    }
+  }
 /*=====  End of 常见功能样式  ======*/
 
 

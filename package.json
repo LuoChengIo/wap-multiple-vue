@@ -2,13 +2,14 @@
   "name": "wap-multiple-vue",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "lv",
+  "author": "lc",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "cross-env BABEL_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build:prod": "cross-env NODE_ENV=production folder_name=dist_online env_config=prod node build/build.js",
+    "build:sit": "cross-env NODE_ENV=production folder_name=dist_sit env_config=sit node build/build.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -35,6 +36,7 @@
     "css-loader": "^0.28.0",
     "cssnano": "^3.10.0",
     "cssnano-preset-advanced": "^4.0.0-rc.2",
+    "cross-env": "^5.2.0",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
@@ -49,7 +51,6 @@
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "glob": "^7.1.2",
-    "highlight.js": "^9.12.0",
     "html-webpack-plugin": "^2.30.1",
     "node-notifier": "^5.1.2",
     "normalize.css": "^8.0.0",

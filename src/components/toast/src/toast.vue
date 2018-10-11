@@ -1,7 +1,14 @@
 <template>
   <transition name="toast-fade">
-    <div class="vc-toast" v-show="visible">
-      <span class="vc-toast-text" v-html="message"></span>
+    <div class="vc-toast" v-show="visible" :style="{'top':top}">
+      <div class="vc-ct">
+        <div class="toast-icon" v-if="toasttype">
+          <svg-icon v-if="type === 'success'" class-name="success" icon-class="correct"  />
+          <svg-icon v-if="type === 'warning'" class-name="warning" icon-class="warning"  />
+          <svg-icon v-if="type === 'error'" class-name="error" icon-class="error"  />
+        </div>
+        <span class="vc-toast-text" v-html="message"></span>
+      </div>
     </div>
   </transition>
 </template>
@@ -12,6 +19,7 @@
       return {
         visible: false,
         message: '',
+        top: '50%',
         duration: 3000,
         closed: false,
         onClose: null,
@@ -28,6 +36,9 @@
       }
     },
     computed: {
+      toasttype() {
+        return this.type !== 'info'
+      }
     },
     methods: {
       destroyElement() {
@@ -64,20 +75,29 @@
 <style lang="postcss" scoped>
   .vc-toast{
     position: fixed;
-    left: 50%;
     top: 50%;
-    max-width: 80%;
-    padding:1em 2em;
+    width: 100%;
     font-size: 28px;
-    border-radius:.1em;
-    background: rgba(0, 0, 0, 1);
-    color: #fff;
     text-align: center;
     z-index: 9999;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    display: block;
+    & .vc-ct{
+      display: inline-block;
+      color: #fff;
+      border-radius:4px;
+      padding:1em 2em;
+      max-width: 80%;
+      background: rgba(0, 0, 0, .8);
+    }
+    & .toast-icon{
+      font-size:80px;
+      padding-bottom:20px;
+    }
   }
   .vc-toast-text{
-    display: block;
+    display: inline-block;
+    word-break: break-all;
     text-align: center;
   }
   
@@ -91,7 +111,7 @@
 }
 .toast-fade-enter, .toast-fade-leave-to
 /* .toast-fade-leave-active for below version 2.1.8 */ {
-  transform: translate(-50%,-30%);
+  transform: translateY(-30%);
   opacity: 0;
 }
 </style>
