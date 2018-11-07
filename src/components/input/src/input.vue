@@ -74,6 +74,11 @@ export default {
     },
     tabindex: String
   },
+  watch: {
+    value(val, oldValue) {
+      this.setCurrentValue(val)
+    }
+  },
   computed: {
     dStyles() {
       const style = {}
