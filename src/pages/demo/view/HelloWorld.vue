@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-      实打实的
+    实打实的
   </div>
 </template>
 
